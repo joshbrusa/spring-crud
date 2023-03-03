@@ -8,5 +8,23 @@
   </head>
   <body>
     <h1>Posts</h1>
+    <a th:href="@{/post/create}" class="">Create</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="post:${post}">
+          <td th:text="${post.id}"></td>
+          <td th:text="${post.title}"></td>
+          <td th:text="${post.body}"></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
